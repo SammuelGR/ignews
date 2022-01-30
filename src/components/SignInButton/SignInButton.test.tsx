@@ -3,14 +3,16 @@ import { SignInButton } from ".";
 
 describe("SignInButton", () => {
   it("SignInButton renders correctly with authenticated user", () => {
-    render(<SignInButton isUserLoggedIn={true} />);
+    render(<SignInButton />);
 
     expect(screen.getByText("Sammuel Reis")).toBeInTheDocument();
   });
 
   it("SignInButton renders correctly with no authenticated user", () => {
-    render(<SignInButton isUserLoggedIn={false} />);
+    render(<SignInButton />);
 
     expect(screen.getByText("Sign in with Github")).toBeInTheDocument();
   });
 });
+
+// maldito next auth atualiza quebra teste 😤
